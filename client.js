@@ -14,6 +14,17 @@ const connect = function () {
     console.log('Message recieved form snakeserver :>> ', data);
   })
 
+  conn.on('connect', (data) => {
+    console.log('Connection is good...', data);
+  })
+
+  conn.write('Name: JLM');
+  setTimeout(()=>conn.write('Move: up'),50)
+  setTimeout(()=>conn.write('Move: up'),150)
+  setTimeout(()=>conn.write('Move: up'),250)
+  setTimeout(()=>conn.write('Move: up'),350)
+  setTimeout(()=>conn.write('Move: up'),450)
+
   return conn;
 };
 
