@@ -1,10 +1,10 @@
 const net = require("net");
-
+const {HOST, PORT} = require('./const')
 // establishes a connection with the game server
 const connect = function () {
   const conn = net.createConnection({
-    host: '127.0.0.1',
-    port: '50541',
+    host: HOST,
+    port: PORT,
   });
 
   // interpret incoming data as text
@@ -19,11 +19,7 @@ const connect = function () {
   })
 
   conn.write('Name: JLM');
-  setTimeout(()=>conn.write('Move: up'),50)
-  setTimeout(()=>conn.write('Move: up'),150)
-  setTimeout(()=>conn.write('Move: up'),250)
-  setTimeout(()=>conn.write('Move: up'),350)
-  setTimeout(()=>conn.write('Move: up'),450)
+
 
   return conn;
 };
